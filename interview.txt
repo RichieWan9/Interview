@@ -1,0 +1,48 @@
+1.Override equals, hashCode method
+
+2.FrameLayout gravity
+
+3.<Merge> tag
+
+4.resource match
+
+5.the difference between padding and margin
+
+6.permission
+
+7.what activity lifecycle will be executed when screen lock
+
+8.onSaveInstanceState
+
+9.Lifecycle for service, startService and bindService
+
+10.Content uri
+
+11.Broadcast can run in non-ui thread?
+
+12.animation
+
+13.What kinds of threads in andorid
+
+14.ANR
+
+15.launchMode, NEW_TASK
+
+16.onInterceptTouchEvent onTouchEvent
+
+17.MultiTouch
+
+18.What is Context, the class structure
+
+19.Handler, Message, MessageQueue, Looper, Thread, HandlerThread, Runnable
+
+20.measure, layout
+
+21.aidl
+
+22.binder
+
+23.Widget
+
+
+
