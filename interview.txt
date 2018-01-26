@@ -1,34 +1,94 @@
-1.Override equals, hashCode method
 
-2.FrameLayout gravity
+Q. <Merge> tag
 
-3.<Merge> tag
+Ans: <merge/> is useful because it can get rid of unneeded ViewGroups, i.e. layouts that are simply used to wrap other views and serve no purpose themselves.
 
-4.resource match
+Q.the difference between padding and margin
 
-5.the difference between padding and margin
+Ans: padding is the space between the content and the border, whereas margin is the space outside the border. Here's an image I found from a quick Google search, that illustrates this idea.
+[alt text](http://i.stack.imgur.com/D9nU6.gif)
 
 6.permission
 
+Ans: Declares a security permission that can be used to limit access to specific components or features of this or other applications. See the Permissions section in the introduction, and the Security and Permissions document for more information on how permissions work. For more http://developer.android.com/guide/topics/manifest/permission-element.html
+
 7.what activity lifecycle will be executed when screen lock
+
+Ans: The user opens an activity.
+onCreated() is called
+onStart() is called
+onResume() is called
+The user LOCKS the device 4.5 onPause is called()
+onDestroy() is called
+onCreate() is called
+onStart() is called
+onResume() is called 8.5 onPause is called()
+The user UNLOCKS the device
+onResume() is called
+onDestroy() is called
+onCreate() is called
+onStart() is called
+onResume() is called.
 
 8.onSaveInstanceState
 
+Ans: Called to retrieve per-instance state from an activity before being killed so that the state can be restored in onCreate(Bundle) or onRestoreInstanceState(Bundle) (the Bundle populated by this method will be passed to both). For more http://developer.android.com/reference/android/app/Activity.html#onSaveInstanceState(android.os.Bundle)
+
 9.Lifecycle for service, startService and bindService
+
+Ans: Lifecycle: [alt text](http://www.tutorialspoint.com/android/images/android_service_lifecycle.jpg)
+
 
 10.Content uri
 
+Ans:Utility methods useful for working with Uri objects that use the "content" (content://) scheme. For more http://developer.android.com/reference/android/content/ContentUris.html#ContentUris()
+
 11.Broadcast can run in non-ui thread?
+
+Ans: Usually, it all depends how you register it.
+
+If you register your BroadcastReceiver using:
+
+registerReceiver(BroadcastReceiver receiver, IntentFilter filter)
+It will run in the main activity thread(aka UI thread).
+
+If you register your BroadcastReceiver using a valid Handler running on a different thread:
+
+registerReceiver (BroadcastReceiver receiver, IntentFilter filter, String broadcastPermission, Handler scheduler)
+It will run in the context of your Handler
+
 
 12.animation
 
+Ans: These classes provide functionality for the property animation system, which allows you to animate object properties of any type. int, float, and hexadecimal color values are supported by default. You can animate any other type by telling the system how to calculate the values for that given type with a custom TypeEvaluator.
+
+
 13.What kinds of threads in andorid
+
+Ans: AsyncTask & Handler()
 
 14.ANR
 
+Ans: It's possible to write code that wins every performance test in the world, but still feels sluggish, hang or freeze for significant periods, or take too long to process input. The worst thing that can happen to your app's responsiveness is an "Application Not Responding" (ANR) dialog. for more read http://developer.android.com/training/articles/perf-anr.html
+
+
+
 15.launchMode, NEW_TASK
 
+Ans: android:launchMode
+An instruction on how the activity should be launched. There are four modes that work in conjunction with activity flags (FLAG_ACTIVITY_* constants) in Intent objects to determine what should happen when the activity is called upon to handle an intent. They are:
+"standard" 
+"singleTop" 
+"singleTask" 
+"singleInstance"
+
+The default mode is "standard".
+
+NEW_TASK : This produces the same behavior as the "singleTask" launchMode value, discussed in the previous section.
+This flag is generally used by activities that want to present a "launcher" style behavior: they give the user a list of separate things that can be done, which otherwise run completely independently of the activity launching them.
+
 16.onInterceptTouchEvent onTouchEvent
+
 
 17.MultiTouch
 
@@ -36,13 +96,33 @@
 
 19.Handler, Message, MessageQueue, Looper, Thread, HandlerThread, Runnable
 
+Ans: [alt text](http://i.stack.imgur.com/h4z38.jpg) 
+A Looper is a message handling loop: it reads and processes items from a MessageQueue. The Looper class is usually used in conjunction with a LooperThread (a subclass of Thread).
+
+A Handler is a utility class that facilitates interacting with a Looper—mainly by posting messages and Runnable objects to the thread's MessageQueue. When a Handler is created, it is bound to a specific Looper (and associated thread and message queue).
+
+In typical usage, you create and start a LooperThread, then create a Handler object (or objects) by which other threads can interact with the LooperThread instance. The Handler must be created while running on the LooperThread, although once created there is no restriction on what threads can use the Handler's scheduling methods (post(Runnable), etc.)
+
+The main thread (a.k.a. UI thread) in an Android application is set up as a looper thread before your application is created.
+
+
 20.measure, layout
+
+Ans: Two steps of drawing the Layout. for more https://developer.android.com/guide/topics/ui/how-android-draws.html
+
 
 21.aidl
 
+Ans: Android Interface Definiton Language:
+AIDL (Android Interface Definition Language) is similar to other IDLs you might have worked with. It allows you to define the programming interface that both the client and service agree upon in order to communicate with each other using interprocess communication (IPC). On Android, one process cannot normally access the memory of another process. So to talk, they need to decompose their objects into primitives that the operating system can understand, and marshall the objects across that boundary for you. The code to do that marshalling is tedious to write, so Android handles it for you with AIDL.
+
 22.binder
 
+Ans: Base class for a remotable object, the core part of a lightweight remote procedure call mechanism defined by IBinder. This class is an implementation of IBinder that provides the standard support creating a local implementation of such an object. For more http://developer.android.com/reference/android/os/Binder.html
+
 23.Widget
+
+Ans: The widget package contains (mostly visual) UI elements to use on your Application screen. You can also design your own. For more http://developer.android.com/reference/android/widget/package-summary.html
 
 
 
